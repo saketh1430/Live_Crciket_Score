@@ -99,7 +99,7 @@ for info in match_info:
 #         show_wicket_warning = False
 
     # Display the overs info
-    st.write(overs)
+#     st.write(overs)
 Commentry_info = []
 Commentry_details = soup1.select('.d-flex')
 for detail in Commentry_details:
