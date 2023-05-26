@@ -49,7 +49,7 @@ visibility: hidden;
 st.title("Live Score Update Faster then your expectations")
 st.header('Watch Online Streaming')
 movie_url = 'https://www.jiocinema.com/sports'
-st.markdown(f'<iframe src="{movie_url}" width="300" height="500" frameborder="0" allowfullscreen></iframe>',
+st.markdown(f'<iframe src="{movie_url}" width="300" height="300" frameborder="0" allowfullscreen></iframe>',
     unsafe_allow_html=True)
 st.title("Match Updates")
 match_info_placeholder = st.empty()
