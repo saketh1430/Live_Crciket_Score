@@ -69,6 +69,7 @@ while True:
         match_info_placeholder.write(info)
     overs_info = []
     overs_details = soup1.select('.overs')
+    show_warning = True
     for detail in overs_details:
         overs_info.append(detail.text)
     Overs_info_placeholder.header("Overs Info")
