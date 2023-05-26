@@ -55,58 +55,46 @@ link = 'https://www.cricketworld.com/cricket/gujarat-titans-vs-mumbai-indians/ma
 link1 = 'https://crex.live/scoreboard/JPG/19W/Qualifier-2/F/KB/gt-vs-mi-qualifier-2-indian-premier-league-2023/live'
 
 
-while True:
-    res = requests.get(link)
-    res1 = requests.get(link1)
-    soup = bs4.BeautifulSoup(res.text, 'html.parser')
-    soup1 = bs4.BeautifulSoup(res1.text, 'html.parser')
-    match_info = []
-    match_details = soup.select('.match-header')
-    for detail in match_details:
-        match_info.append(detail.text)
-    match_info_placeholder.header("Match Info")
-    for info in match_info:
-        match_info_placeholder.write(info)
-    overs_info = []
-    overs_details = soup1.select('.overs')
-    show_warning = True  # Flag variable to control the visibility of the warnings
-    show_four_warning = True  # Flag variable for the "FOUR" warning
-    show_six_warning = True  # Flag variable for the "SIX" warning
-    show_wicket_warning = True
-    for detail in overs_details:
-        overs_info.append(detail.text)
-    Overs_info_placeholder.header("Overs Info")
-    Overs_info_placeholder.header("Overs Info")
-    for info in overs_info:
-        if "This Over:" in info:
-            if "4" in info and show_four_warning:
-                st.warning("That's a FOUR!")
-                show_warning = False  # Hide other warnings
-                show_four_warning = False  # Hide the "FOUR" warning
-            elif "6" in info and show_six_warning:
-                st.success("That's a SIX!")
-                show_warning = False
-                show_six_warning = False  # Hide the "SIX" warning
-            elif ("W" in info or "w" in info) and show_wicket_warning:
-                st.warning("That's a WICKET!")
-                show_warning = False
-                show_wicket_warning = False  # Hide the "WICKET" warning
-            else:
-                show_warning = True
-                show_four_warning = True  # Reset the "FOUR" warning flag
-                show_six_warning = True  # Reset the "SIX" warning flag
-                show_wicket_warning = True  # Reset the "WICKET" warning flag
-        Overs_info_placeholder.write(info)
-        
-            
-    Commentry_info = []
-    Commentry_details = soup1.select('.d-flex')
-    for detail in Commentry_details:
-        Commentry_info.append(detail.text)
-    Commentry_info_placeholder.header("Overs Info")
-    for info in Commentry_info:
-       Commentry_info_placeholder.write(info) 
-    time.sleep(10)
+
+res = requests.get(link)
+res1 = requests.get(link1)
+soup = bs4.BeautifulSoup(res.text, 'html.parser')
+soup1 = bs4.BeautifulSoup(res1.text, 'html.parser')
+match_info = []
+match_details = soup.select('.match-header')
+for detail in match_details:
+    match_info.append(detail.text)
+match_info_placeholder.header("Match Info")
+for info in match_info:
+    match_info_placeholder.write(info)
+overs_info = []
+show_four_warning = True
+show_six_warning = True
+show_wicket_warning = True
+overs_details = soup1.select('.d-flex')
+for detail in overs_details:
+    overs_info.append(detail.text)
+Overs_info_placeholder.header("Overs Info")
+for overs in overs_info:
+    overs_text = overs.get_text(strip=True)
+    if "4" in overs_text and show_four_warning:
+        st.warning("That's a FOUR!")
+        show_four_warning = False
+    elif "6" in overs_text and show_six_warning:
+        st.success("That's a SIX!")
+        show_six_warning = False
+    elif ("W" in overs_text or "w" in overs_text) and show_wicket_warning:
+        st.warning("That's a WICKET!")
+        show_wicket_warning = False
+    st.write(overs_text)
+Commentry_info = []
+Commentry_details = soup1.select('.d-flex')
+for detail in Commentry_details:
+    Commentry_info.append(detail.text)
+Commentry_info_placeholder.header("Overs Info")
+for info in Commentry_info:
+   Commentry_info_placeholder.write(info) 
+time.sleep(10)
 
 
 
