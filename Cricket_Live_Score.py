@@ -72,14 +72,20 @@ while True:
     for detail in overs_details:
         overs_info.append(detail.text)
     Overs_info_placeholder.header("Overs Info")
-    for info in overs_info:
-        Overs_info_placeholder.write(info)
-        if "This Over:" in info and "4" in info:
+   for info in overs_info:
+    if "This Over:" in info:
+        if "4" in info and show_warning:
             st.warning("That's a FOUR!")
-        if "This Over:" in info and "6" in info:
+            show_warning = False
+        elif "6" in info and show_warning:
             st.success("That's a SIX!")
-        if "This Over:" in info and "W"  in info or "w" in info:
-            st.error("That's a WICKET!") 
+            show_warning = False
+        elif ("W" in info or "w" in info) and show_warning:
+            st.warning("That's a WICKET!")
+            show_warning = False
+        else:
+            show_warning = True
+        Overs_info_placeholder.write(info) 
         
             
     Commentry_info = []
