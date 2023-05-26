@@ -61,6 +61,14 @@ while True:
     match_info_placeholder.header("Match Info")
     for info in match_info:
         match_info_placeholder.write(info)
+    overs_info = []
+    overs_details = soup1.select('.overs')
+    for detail in overs_details:
+        overs_info.append(detail.text)
+    Overs_info_placeholder.header("Overs Info")
+    for info in overs_info:
+       Overs_info_placeholder.write(info)
+    time.sleep(5)
     time.sleep(5)
 
 
