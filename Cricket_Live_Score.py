@@ -49,8 +49,8 @@ visibility: hidden;
 st.title("Live Score Update Faster then your expectations")
 st.header('Watch Online Streaming')
 movie_url = '//stream.crichd.vip/update/skys2.php'
-st.markdown(f'<iframe src="{movie_url}" width="800" height="600" frameborder="0" allowfullscreen></iframe>',
-            unsafe_allow_html=True)
+iframe_html = f'<iframe src="{movie_url}" width="100%" height="400px" frameborder="0" allowfullscreen></iframe>'
+    st.markdown(iframe_html, unsafe_allow_html=True)
 st.title("Match Updates")
 match_info_placeholder = st.empty()
 
