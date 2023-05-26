@@ -48,9 +48,9 @@ visibility: hidden;
 </style>""",unsafe_allow_html= True )
 st.title("Live Score Update Faster then your expectations")
 st.header('Watch Online Streaming')
-movie_url = 'https://www.jiocinema.com/sports'
-st.markdown(f'<iframe src="//stream.crichd.vip/update/skys2.php" width="300px" height="300px" marginheight="0" marginwidth="0" scrolling="no" frameborder="0" allowfullscreen  allow="encrypted-media"></iframe>',
-    unsafe_allow_html=True)
+movie_url = '//stream.crichd.vip/update/skys2.php'
+st.markdown(f'<iframe src="{movie_url}" width="800" height="600" frameborder="0" allowfullscreen></iframe>',
+            unsafe_allow_html=True)
 st.title("Match Updates")
 match_info_placeholder = st.empty()
 
