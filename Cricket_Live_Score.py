@@ -3,6 +3,17 @@ import requests
 import bs4
 import time
 from streamlit_option_menu import option_menu
+st.markdown(""" 
+<style>
+.css-1rs6os.edgvbvh3
+{
+visibility: hidden;
+}
+.css-cio0dv.egzxvld1
+{
+   visibility:hidden;
+}
+</style>""",unsafe_allow_html= True )
 st.title("")
 with st.sidebar:
     selected = option_menu(
