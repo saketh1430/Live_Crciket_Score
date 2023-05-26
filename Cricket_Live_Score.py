@@ -59,8 +59,8 @@ while True:
     for detail in match_details:
         match_info.append(detail.text)
     match_info_placeholder.header("Match Info")
-    for info in overs_info:
-       Overs_info_placeholder.write(info)
+    for info in match_info:
+        match_info_placeholder.write(info)
     time.sleep(5)
 
 
