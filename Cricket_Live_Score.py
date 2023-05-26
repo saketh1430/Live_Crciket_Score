@@ -49,7 +49,10 @@ visibility: hidden;
 st.title("Live Score Update Faster then your expectations")
 movie_url = 'https://www.jiocinema.com/sports'
 st.header('Watch Online Streaming')
-st.markdown(f'<iframe src="{movie_url}" width="800" height="600" frameborder="0" allowfullscreen></iframe>',unsafe_allow_html=True)
+screen_width = st.sidebar.slider("Screen Width", 200, 1200, 800)
+screen_height = st.sidebar.slider("Screen Height", 200, 1000, 600)
+iframe_html = f'<iframe src="{movie_url}" width="{screen_width}" height="{screen_height}" frameborder="0" allowfullscreen></iframe>'
+st.markdown(iframe_html, unsafe_allow_html=True)
 st.title("Match Updates")
 match_info_placeholder = st.empty()
 
