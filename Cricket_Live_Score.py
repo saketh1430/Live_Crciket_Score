@@ -49,6 +49,7 @@ visibility: hidden;
 st.title("Match Updates")
 match_info_placeholder = st.empty()
 Overs_info_placeholder = st.empty()
+Commentry_info_placeholder = st.empty()
 
 link = 'https://www.cricketworld.com/cricket/gujarat-titans-vs-mumbai-indians/match/live/62446'
 link1 = 'https://crex.live/scoreboard/JPG/19W/Qualifier-2/F/KB/gt-vs-mi-qualifier-2-indian-premier-league-2023/live'
