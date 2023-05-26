@@ -81,6 +81,13 @@ while True:
         
         else:
             Overs_info_placeholder.write(info)
+    Commentry_info = []
+    Commentry_details = soup1.select('.d-flex')
+    for detail in Commentry_details:
+        Commentry_info.append(detail.text)
+    Commentry_info_placeholder.header("Overs Info")
+    for info in Commentry_info:
+       Commentry_info_placeholder.write(info) 
     time.sleep(3)
 
 
