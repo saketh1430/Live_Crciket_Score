@@ -78,25 +78,25 @@ while True:
     Overs_info_placeholder.header("Overs Info")
     Overs_info_placeholder.header("Overs Info")
     for info in overs_info:
-      if "This Over:" in info:
-        if "4" in info and show_four_warning:
-            st.warning("That's a FOUR!")
-            show_warning = False  # Hide other warnings
-            show_four_warning = False  # Hide the "FOUR" warning
-        elif "6" in info and show_six_warning:
-            st.success("That's a SIX!")
-            show_warning = False
-            show_six_warning = False  # Hide the "SIX" warning
-        elif ("W" in info or "w" in info) and show_wicket_warning:
-            st.warning("That's a WICKET!")
-            show_warning = False
-            show_wicket_warning = False  # Hide the "WICKET" warning
-        else:
-            show_warning = True
-            show_four_warning = True  # Reset the "FOUR" warning flag
-            show_six_warning = True  # Reset the "SIX" warning flag
-            show_wicket_warning = True  # Reset the "WICKET" warning flag
-       Overs_info_placeholder.write(info)
+        if "This Over:" in info:
+            if "4" in info and show_four_warning:
+                st.warning("That's a FOUR!")
+                show_warning = False  # Hide other warnings
+                show_four_warning = False  # Hide the "FOUR" warning
+            elif "6" in info and show_six_warning:
+                st.success("That's a SIX!")
+                show_warning = False
+                show_six_warning = False  # Hide the "SIX" warning
+            elif ("W" in info or "w" in info) and show_wicket_warning:
+                st.warning("That's a WICKET!")
+                show_warning = False
+                show_wicket_warning = False  # Hide the "WICKET" warning
+            else:
+                show_warning = True
+                show_four_warning = True  # Reset the "FOUR" warning flag
+                show_six_warning = True  # Reset the "SIX" warning flag
+                show_wicket_warning = True  # Reset the "WICKET" warning flag
+        Overs_info_placeholder.write(info)
         
             
     Commentry_info = []
