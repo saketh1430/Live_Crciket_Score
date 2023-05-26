@@ -83,7 +83,7 @@ overs_info = []
 show_four_warning = True
 show_six_warning = True
 show_wicket_warning = True
-overs_details = soup1.select('.d-flex')
+overs_details = soup1.select('.content')
 for detail in overs_details:
     overs_info.append(detail.text)
 Overs_info_placeholder.header("Overs Info")
