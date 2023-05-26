@@ -76,17 +76,18 @@ for detail in overs_details:
     overs_info.append(detail.text)
 Overs_info_placeholder.header("Overs Info")
 for overs in overs_info:
-    overs_text = overs.get_text(strip=True)
-    if "4" in overs_text and show_four_warning:
+    if "4" in overs and show_four_warning:
         st.warning("That's a FOUR!")
         show_four_warning = False
-    elif "6" in overs_text and show_six_warning:
+    elif "6" in overs and show_six_warning:
         st.success("That's a SIX!")
         show_six_warning = False
-    elif ("W" in overs_text or "w" in overs_text) and show_wicket_warning:
+    elif ("W" in overs or "w" in overs) and show_wicket_warning:
         st.warning("That's a WICKET!")
         show_wicket_warning = False
-    st.write(overs_text)
+
+    # Display the overs info
+    st.write(overs)
 Commentry_info = []
 Commentry_details = soup1.select('.d-flex')
 for detail in Commentry_details:
