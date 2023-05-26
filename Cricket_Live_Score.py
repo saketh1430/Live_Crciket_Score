@@ -52,7 +52,6 @@ if selected=="Live Streaming":
         st.header('Watch Online Streaming')
         st.markdown(f'<iframe src="{movie_url}" width="800" height="600" frameborder="0" allowfullscreen></iframe>',
             unsafe_allow_html=True)
-if selected=="MI vs GT":
 st.title("Match Updates")
 match_info_placeholder = st.empty()
 
