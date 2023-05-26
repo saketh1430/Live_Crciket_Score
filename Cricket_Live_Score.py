@@ -59,8 +59,8 @@ while True:
     for detail in match_details:
         match_info.append(detail.text)
     match_info_placeholder.header("Match Info")
-    for info in match_info:
-        st.markdown(f'<p style="font-family: Arial, sans-serif; font-size: 18px;">{info}</p>', unsafe_allow_html=True)
+    for info in overs_info:
+       Overs_info_placeholder.write(info)
     time.sleep(5)
 
 
