@@ -79,24 +79,24 @@ for detail in match_details:
 match_info_placeholder.header("Match Info")
 for info in match_info:
     match_info_placeholder.write(info)
-overs_info = []
-show_four_warning = True
-show_six_warning = True
-show_wicket_warning = True
-overs_details = soup1.select('.content')
-for detail in overs_details:
-    overs_info.append(detail.text)
-Overs_info_placeholder.header("Overs Info")
-for overs in overs_info:
-    if "4" in overs and show_four_warning:
-        st.warning("That's a FOUR!")
-        show_four_warning = False
-    elif "6" in overs and show_six_warning:
-        st.success("That's a SIX!")
-        show_six_warning = False
-    elif ("W" in overs or "w" in overs) and show_wicket_warning:
-        st.error("That's a WICKET!")
-        show_wicket_warning = False
+# overs_info = []
+# show_four_warning = True
+# show_six_warning = True
+# show_wicket_warning = True
+# overs_details = soup1.select('.content')
+# for detail in overs_details:
+#     overs_info.append(detail.text)
+# Overs_info_placeholder.header("Overs Info")
+# for overs in overs_info:
+#     if "4" in overs and show_four_warning:
+#         st.warning("That's a FOUR!")
+#         show_four_warning = False
+#     elif "6" in overs and show_six_warning:
+#         st.success("That's a SIX!")
+#         show_six_warning = False
+#     elif ("W" in overs or "w" in overs) and show_wicket_warning:
+#         st.error("That's a WICKET!")
+#         show_wicket_warning = False
 
     # Display the overs info
     st.write(overs)
