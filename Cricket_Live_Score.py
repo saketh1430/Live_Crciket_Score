@@ -47,11 +47,9 @@ visibility: hidden;
 }
 </style>""",unsafe_allow_html= True )
 st.title("Live Score Update Faster then your expectations")
-if selected=="Live Streaming":
-        movie_url = 'https://www.jiocinema.com/sports'
-        st.header('Watch Online Streaming')
-        st.markdown(f'<iframe src="{movie_url}" width="800" height="600" frameborder="0" allowfullscreen></iframe>',
-            unsafe_allow_html=True)
+movie_url = 'https://www.jiocinema.com/sports'
+st.header('Watch Online Streaming')
+st.markdown(f'<iframe src="{movie_url}" width="800" height="600" frameborder="0" allowfullscreen></iframe>',unsafe_allow_html=True)
 st.title("Match Updates")
 match_info_placeholder = st.empty()
 
