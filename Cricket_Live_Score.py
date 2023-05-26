@@ -72,7 +72,15 @@ while True:
         overs_info.append(detail.text)
     Overs_info_placeholder.header("Overs Info")
     for info in overs_info:
-       Overs_info_placeholder.write(info)
+        if info == '4':
+            st.warning(info)
+        if info == '6':
+            st.success(info)
+        if info == 'W' or info == 'w':
+            st.error(info)
+        
+        else:
+            Overs_info_placeholder.write(info)
     time.sleep(5)
     time.sleep(5)
 
