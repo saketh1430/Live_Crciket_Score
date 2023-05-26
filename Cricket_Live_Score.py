@@ -91,10 +91,10 @@ for overs in overs_info:
     if "4" in overs and show_four_warning:
         st.warning("That's a FOUR!")
         show_four_warning = False
-    if "6" in overs and show_six_warning:
+    elif "6" in overs and show_six_warning:
         st.success("That's a SIX!")
         show_six_warning = False
-    if ("W" in overs or "w" in overs) and show_wicket_warning:
+    elif ("W" in overs or "w" in overs) and show_wicket_warning:
         st.error("That's a WICKET!")
         show_wicket_warning = False
 
