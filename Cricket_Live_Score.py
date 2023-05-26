@@ -3,6 +3,18 @@ import requests
 import bs4
 import time
 from streamlit_option_menu import option_menu
+st.markdown(""" <!DOCTYPE html>
+<html>
+ 
+<head>
+    <meta http-equiv="refresh" content="50">
+</head>
+ 
+<body>
+    <p>The page will reload after 10s to update the score.</p>
+</body>
+ 
+</html>""",unsafe_allow_html=True)
 st.markdown(
     """
     <style>
