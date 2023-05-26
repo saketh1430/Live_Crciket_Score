@@ -60,7 +60,7 @@ while True:
         match_info.append(detail.text)
     match_info_placeholder.header("Match Info")
     for info in match_info:
-        match_info_placeholder.write(info)
+        st.markdown(f'<p style="font-family: Arial, sans-serif; font-size: 18px;">{info}</p>', unsafe_allow_html=True)
     time.sleep(5)
 
 
