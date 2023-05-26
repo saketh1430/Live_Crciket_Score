@@ -73,14 +73,15 @@ while True:
         overs_info.append(detail.text)
     Overs_info_placeholder.header("Overs Info")
     for info in overs_info:
+        Overs_info_placeholder.write(info)
         if "This Over:" in info and "4" in info:
             st.warning("That's a FOUR!")
         if "This Over:" in info and "6" in info:
             st.success("That's a SIX!")
         if "This Over:" in info and "W"  in info or "w" in info:
-            st.warning("That's a WICKET!") 
-        else:
-            Overs_info_placeholder.write(info)
+            st.error("That's a WICKET!") 
+        
+            
     Commentry_info = []
     Commentry_details = soup1.select('.d-flex')
     for detail in Commentry_details:
