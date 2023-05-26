@@ -72,8 +72,8 @@ while True:
     for detail in overs_details:
         overs_info.append(detail.text)
     Overs_info_placeholder.header("Overs Info")
-   for info in overs_info:
-    if "This Over:" in info:
+    for info in overs_info:
+     if "This Over:" in info:
         if "4" in info and show_warning:
             st.warning("That's a FOUR!")
             show_warning = False
