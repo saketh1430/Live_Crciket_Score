@@ -50,10 +50,14 @@ st.title("Match Updates")
 match_info_placeholder = st.empty()
 
 link = 'https://www.cricketworld.com/cricket/gujarat-titans-vs-mumbai-indians/match/live/62446'
+link1 = 'https://crex.live/scoreboard/JPG/19W/Qualifier-2/F/KB/gt-vs-mi-qualifier-2-indian-premier-league-2023/live'
+
 
 while True:
     res = requests.get(link)
+    res1 = requests.get(link1)
     soup = bs4.BeautifulSoup(res.text, 'html.parser')
+    soup1 = bs4.BeautifulSoup(res1.text, 'html.parser')
     match_info = []
     match_details = soup.select('.match-header')
     for detail in match_details:
