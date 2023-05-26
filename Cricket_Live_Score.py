@@ -81,8 +81,7 @@ while True:
         
         else:
             Overs_info_placeholder.write(info)
-    time.sleep(5)
-    time.sleep(5)
+    time.sleep(3)
 
 
 
