@@ -106,7 +106,7 @@ while True:
     Commentry_info_placeholder.header("Overs Info")
     for info in Commentry_info:
        Commentry_info_placeholder.write(info) 
-    time.sleep(3)
+    time.sleep(10)
 
 
 
