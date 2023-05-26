@@ -3,6 +3,38 @@ import requests
 import bs4
 import time
 from streamlit_option_menu import option_menu
+st.markdown(
+    """
+    <style>
+    .reportview-container {
+        max-width: 100%;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+st.markdown(
+    """
+    <style>
+    .sidebar .sidebar-content {
+        max-width: 250px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    </style>
+    """,
+    unsafe_allow_html=True
+)
+
+hide_footer_style = """
+    <style>
+    .reportview-container .main footer {
+        visibility: hidden;
+    }
+    """
+st.markdown(hide_footer_style, unsafe_allow_html=True)
 st.markdown(""" 
 <style>
 .css-1rs6os.edgvbvh3
